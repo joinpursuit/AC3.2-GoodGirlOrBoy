@@ -40,6 +40,9 @@ steps anymore, do we? Do _we_ need a behavioral app...?
 * If you really want to be organized you can put the kids and the basic behaviors into other Core Data
    entities and use them to populate pickers. But start with populating the pickers from hard coded 
    arrays.
+* You could create a filter on the list of behaviors that filter by kid, by pro/anti social, and by day.
+  The day filter might be easiest to just do today/all. All of these filters could work in combination.
+  *cough*NSPredicate*cough*.
 
 Note: The Coffee Log app did a bit of fancy footwork with trapping the creation of an object 
 and setting the timestamp. I think the way we parsed out Elements and inserted them a week ago in the
@@ -47,7 +50,7 @@ Core Data review (or how you were to do it on the Midunit assessement), creating
 populating its fields, is more straightforward and appropriate for this case.
 
 If you're at a loss for pro- and anti- social behaviors, here's a list that comes immediately to mind.
-Extra credit if you know which are the prosocial behaviors
+Extra credit if you know which are the prosocial behaviors.
 
 * throwing
 * running in the house
