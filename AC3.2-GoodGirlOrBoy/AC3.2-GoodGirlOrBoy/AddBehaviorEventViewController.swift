@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddBehaviorEventViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,14 +16,51 @@ class AddBehaviorEventViewController: UIViewController, UITextFieldDelegate {
     var behaviorTextField = UITextField()
     var behaviorLabel = UILabel()
     var behaviorTypeSelector = UISegmentedControl(items: ["Prosocial", "Antisocial"])
-
     
+    var mainContext: NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         displayViews()
         setConstraints()
+        createNavButtons()
     }
     
+    func createNavButtons() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonPressed))
+    }
+    
+    func saveButtonPressed() {
+        if let name = nameTextField.text, name.characters.count > 0,
+            let description = behaviorTextField.text, description.characters.count > 0,
+            let type = behaviorTypeSelector.titleForSegment(at: behaviorTypeSelector.selectedSegmentIndex) {
+            
+            let newObject = BehaviorEvent(context: mainContext)
+            newObject.behaviorType = type
+            newObject.name = name
+            newObject.behaviorDescription = description
+            newObject.date = NSDate()
+            do {
+                try mainContext.save()
+            }
+            catch let error {
+                fatalError("Failed to save context: \(error)")
+            }
+            let alert = UIAlertController(title: "Success", message: "Behavior Event Added Successfully", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .cancel) { (_) in
+                _ = self.navigationController?.popViewController(animated: true) }
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "Name and Description fields must be filled in correctly", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(okayAction)
+            present(alert, animated: true, completion: nil)
+        }
+    }
     
     func displayViews() {
         self.edgesForExtendedLayout = []
@@ -35,9 +73,11 @@ class AddBehaviorEventViewController: UIViewController, UITextFieldDelegate {
         behaviorTypeSelector.translatesAutoresizingMaskIntoConstraints = false
         
         nameLabel.text = "Name:"
-        nameTextField.borderStyle = .bezel
+        nameTextField.borderStyle = .roundedRect
+        nameTextField.autocorrectionType = .no
         behaviorLabel.text = "Description of observed behavior:"
-        behaviorTextField.borderStyle = .bezel
+        behaviorTextField.borderStyle = .roundedRect
+        behaviorTypeSelector.selectedSegmentIndex = 0
         
         self.view.addSubview(nameTextField)
         self.view.addSubview(nameLabel)

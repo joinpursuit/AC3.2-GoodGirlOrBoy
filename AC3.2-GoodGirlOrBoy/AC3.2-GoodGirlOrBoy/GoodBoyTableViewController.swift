@@ -9,57 +9,91 @@
 import UIKit
 import CoreData
 
-enum Behavior {
-    case prosocial
-    case antisocial
+//enum Behavior {
+//    case prosocial
+//    case antisocial
+//}
+
+enum SortType {
+    case name
+    case type
+    case date
 }
 
 class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
-    var behaviorEvents: [Int] = []
-    var tableView = UITableView()
+    let tableView = UITableView()
+    let sortTypeSegmentControl = UISegmentedControl(items: ["Date", "Type", "Name"])
+    var sortType: SortType = .date
     
     var mainContext: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
-    
     var fetchedResultsController: NSFetchedResultsController<BehaviorEvent>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createTableView()
+        createSegmentControl()
         createNavButtons()
         initializeFetchedResultsController()
+        
     }
     
     func createNavButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "-", style: .plain, target: self, action: #selector(minusButtonPressed))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonPressed))
     }
-    
+ 
+    func createSegmentControl() {
+        self.edgesForExtendedLayout = []
+        sortTypeSegmentControl.backgroundColor = .white
+        sortTypeSegmentControl.selectedSegmentIndex = 0
+        sortTypeSegmentControl.addTarget(self, action: #selector(sortTypeSegemntChanged(_:)), for: .valueChanged)
+        sortTypeSegmentControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(sortTypeSegmentControl)
+        _ = [
+            sortTypeSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sortTypeSegmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sortTypeSegmentControl.topAnchor.constraint(equalTo: view.topAnchor),
+            sortTypeSegmentControl.heightAnchor.constraint(equalToConstant: 30.0)
+            ].map { $0.isActive = true }
+    }
+
     func createTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "behaviorCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tableView)
         _ = [
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        tableView.topAnchor.constraint(equalTo: view.topAnchor),
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30.0),
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ].map { $0.isActive = true }
-        
     }
     
     func initializeFetchedResultsController() {
-        // switch on filter type
-        
         let request: NSFetchRequest<BehaviorEvent> = BehaviorEvent.fetchRequest()
-        let dateSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.date), ascending: false)
-        request.sortDescriptors = [dateSort]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: mainContext, sectionNameKeyPath: nil, cacheName: nil)
+        var sectionName = "date"
+        switch sortType {
+        case .date:
+            let dateSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.date), ascending: false)
+            request.sortDescriptors = [dateSort]
+            sectionName = "date"
+        case .name:
+            let nameSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.name), ascending: true)
+            request.sortDescriptors = [nameSort]
+            sectionName = "name"
+        case .type:
+            let typeSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.behaviorType), ascending: true)
+            request.sortDescriptors = [typeSort]
+            sectionName = "behaviorType"
+        }
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: mainContext, sectionNameKeyPath: sectionName, cacheName: nil)
         fetchedResultsController.delegate = self
         do {
             try fetchedResultsController.performFetch()
@@ -68,36 +102,36 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-        
-    
     func addButtonPressed() {
-        print("add")
-        //addBehaviorEvent(behaviorType: "😇")
         let addBehaviorVC = AddBehaviorEventViewController()
-        addBehaviorVC.navigationController?.title = "😇"
         if let navVC = self.navigationController {
             navVC.pushViewController(addBehaviorVC, animated: true)
         }
     }
     
-    func minusButtonPressed() {
-        print("minus")
-        addBehaviorEvent(behaviorType: "👿")
+    func editButtonPressed() {
+        tableView.setEditing(true, animated: true)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonPressed))
     }
     
-    func addBehaviorEvent(behaviorType: String) {
-        let newObject = BehaviorEvent(context: mainContext)
-        newObject.behaviorType = behaviorType
-        newObject.name = "Tom"
-        newObject.behaviorDescription = "Tom was a naughty boy"
-        newObject.date = NSDate()
-        do {
-            try mainContext.save()
+    func doneButtonPressed() {
+        tableView.setEditing(false, animated: true)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonPressed))
+    }
+    
+    func sortTypeSegemntChanged(_ sender: UISegmentedControl) {
+        switch  sender.selectedSegmentIndex {
+        case 0:
+            sortType = .date
+        case 1:
+            sortType = .type
+        case 2:
+            sortType = .name
+        default:
+            break
         }
-        catch let error {
-            fatalError("Failed to save context: \(error)")
-        }
-
+        initializeFetchedResultsController()
+        tableView.reloadData()
     }
     
     
@@ -106,6 +140,14 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let sections = fetchedResultsController.sections else { fatalError("No sections in fetched results controller") }
         return sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let sections = fetchedResultsController.sections else {
+            fatalError("No sections in fetched results controller")
+        }
+        let sectionInfo = sections[section]
+        return sectionInfo.name
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,6 +162,13 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let object = fetchedResultsController.object(at: indexPath)
+            mainContext.delete(object)
+        }
+    }
+
     //MARK: - NSFetchedResultsController Delegate
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
@@ -154,7 +203,4 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
-
-
-    
 }
