@@ -11,15 +11,7 @@ import CoreData
 
 class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var controller: NSFetchedResultsController<Behavior>!
-    
-    var context: NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
-    
-    var good = true
-    
+    @IBOutlet weak var boyLabel: UILabel!
     @IBOutlet weak var behaviorPicker: UIPickerView!
     @IBOutlet weak var addButton: UIButton!
     
@@ -32,10 +24,22 @@ class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.dismiss(animated: true)
     }
     
+    //Core Data Stuff
+    var context: NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    //PickerData Stuff
     var pickerData = [[String]]()
     let boyNames = ["Jason", "Ben", "Louis"]
     let goodBehaviors = ["Gave a 5-Minute Break", "Scheduled a Party", "Assigned a Curve", "Gave Out Cookies"]
     let badBehaviors = ["Assigned HW Late", "Tricky Pop Quiz", "Kicked a Student"]
+    
+    //Label and Behavior Entity Good Bool stuff
+    var selectedBoy = "Who's"
+    var selectedActivity = "good"
+    var good = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +70,7 @@ class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return pickerData[component].count
     }
     
-    /* Adjusting Font Size with reference from http://stackoverflow.com/questions/7185440/how-to-change-the-font-size-in-uipickerview */
+    /* Adjusting Font Size via http://stackoverflow.com/questions/7185440/how-to-change-the-font-size-in-uipickerview */
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         var pickerLabel = view as? UILabel
@@ -84,10 +88,41 @@ class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 1 && row >= goodBehaviors.count {
-            good = false
+        if component == 0 {
+            switch row {
+            case 0: badBoyLabel(person: boyNames[0])
+            case 1: badBoyLabel(person: boyNames[1])
+            default: badBoyLabel(person: boyNames[2])
+            }
+        }
+        
+        if component == 1 && row <= goodBehaviors.count - 1 {
+            badBoyLabel(goodBehavior: true)
         } else {
+            badBoyLabel(goodBehavior: false)
+        }
+    }
+    
+    //MARK: - Label Stuff
+    
+    func updateLabelText() {
+        boyLabel.text = "\(selectedBoy) been a \(selectedActivity) boy?"
+    }
+    
+    func badBoyLabel(person: String) {
+        selectedBoy = "Has \(person)"
+        updateLabelText()
+    }
+    
+    func badBoyLabel(goodBehavior: Bool) {
+        if goodBehavior {
+            selectedActivity = "good"
             good = true
         }
+        else {
+            selectedActivity = "bad"
+            good = false
+        }
+        updateLabelText()
     }
 }

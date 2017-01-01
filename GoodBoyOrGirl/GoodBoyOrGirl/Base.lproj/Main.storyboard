@@ -40,18 +40,28 @@
                                     <action selector="cancelButtonTapped:" destination="PM2-Ek-38g" eventType="touchUpInside" id="0OQ-j4-Exa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's been a good boy?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOH-N7-LrK">
+                                <rect key="frame" x="24" y="116" width="327" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xNZ-x2-FUo" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="B0p-a1-0dy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mOH-N7-LrK" secondAttribute="trailing" constant="8" id="BWz-cW-4PL"/>
+                            <constraint firstItem="mOH-N7-LrK" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="cmK-fQ-gCr"/>
                             <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="bfu-Wo-3XI" secondAttribute="bottom" constant="8" id="iUf-7v-Dfm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bfu-Wo-3XI" secondAttribute="trailing" constant="8" id="ke6-Oe-OPX"/>
                             <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="xNZ-x2-FUo" secondAttribute="bottom" constant="8" id="s2C-7J-5xd"/>
+                            <constraint firstItem="mOH-N7-LrK" firstAttribute="top" secondItem="5l3-jB-mpl" secondAttribute="bottom" constant="96" id="xJs-0Z-9Ap"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="bfu-Wo-3XI" id="kqq-WU-Lf7"/>
                         <outlet property="behaviorPicker" destination="MEQ-i8-f15" id="C1w-VK-6ZZ"/>
+                        <outlet property="boyLabel" destination="mOH-N7-LrK" id="T6P-bO-P5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqM-qy-dBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,23 +94,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <pickerView key="tableHeaderView" contentMode="scaleToFill" id="5oe-NM-WeA">
+                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </pickerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="behaviorCells" textLabel="vSa-br-akF" detailTextLabel="kzP-Of-MVE" style="IBUITableViewCellStyleSubtitle" id="ssq-Q4-LPJ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssq-Q4-LPJ" id="BKZ-Tt-DR6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSa-br-akF">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kzP-Of-MVE">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -122,6 +136,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterPicker" destination="5oe-NM-WeA" id="Osd-0y-ewd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8H-GU-hst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
