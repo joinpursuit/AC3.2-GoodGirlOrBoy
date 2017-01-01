@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="17g-ah-Qf0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Behavior View Controller-->
+        <scene sceneID="v4f-v7-HNX">
+            <objects>
+                <viewController id="PM2-Ek-38g" customClass="AddBehaviorViewController" customModule="GoodBoyOrGirl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5l3-jB-mpl"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMc-AZ-Rf7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CsU-mp-ATe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-Wo-3XI">
+                                <rect key="frame" x="283" y="629" width="68" height="30"/>
+                                <state key="normal" title="Add Entry"/>
+                                <connections>
+                                    <action selector="addAction:" destination="PM2-Ek-38g" eventType="touchUpInside" id="TES-18-wCq"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-i8-f15">
+                                <rect key="frame" x="24" y="158" width="327" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-x2-FUo">
+                                <rect key="frame" x="24" y="629" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="PM2-Ek-38g" eventType="touchUpInside" id="0OQ-j4-Exa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's been a good boy?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOH-N7-LrK">
+                                <rect key="frame" x="24" y="116" width="327" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xNZ-x2-FUo" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="B0p-a1-0dy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mOH-N7-LrK" secondAttribute="trailing" constant="8" id="BWz-cW-4PL"/>
+                            <constraint firstItem="mOH-N7-LrK" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="cmK-fQ-gCr"/>
+                            <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="bfu-Wo-3XI" secondAttribute="bottom" constant="8" id="iUf-7v-Dfm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bfu-Wo-3XI" secondAttribute="trailing" constant="8" id="ke6-Oe-OPX"/>
+                            <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="xNZ-x2-FUo" secondAttribute="bottom" constant="8" id="s2C-7J-5xd"/>
+                            <constraint firstItem="mOH-N7-LrK" firstAttribute="top" secondItem="5l3-jB-mpl" secondAttribute="bottom" constant="96" id="xJs-0Z-9Ap"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="bfu-Wo-3XI" id="kqq-WU-Lf7"/>
+                        <outlet property="behaviorPicker" destination="MEQ-i8-f15" id="C1w-VK-6ZZ"/>
+                        <outlet property="boyLabel" destination="mOH-N7-LrK" id="T6P-bO-P5i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqM-qy-dBB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765.5999999999999" y="-545.57721139430294"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cCQ-5L-Gvd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="17g-ah-Qf0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6o9-qn-lLr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pv0-U0-uYo" kind="relationship" relationship="rootViewController" id="HsX-N6-5jb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jx-pG-ejs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="-543.77811094452773"/>
+        </scene>
+        <!--Bad Boys-->
+        <scene sceneID="j9p-zJ-v7Y">
+            <objects>
+                <tableViewController id="pv0-U0-uYo" customClass="BehaviorTableViewController" customModule="GoodBoyOrGirl" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CCf-aX-7H9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <pickerView key="tableHeaderView" contentMode="scaleToFill" id="5oe-NM-WeA">
+                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </pickerView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="behaviorCells" textLabel="vSa-br-akF" detailTextLabel="kzP-Of-MVE" style="IBUITableViewCellStyleSubtitle" id="ssq-Q4-LPJ">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssq-Q4-LPJ" id="BKZ-Tt-DR6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSa-br-akF">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kzP-Of-MVE">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pv0-U0-uYo" id="rvs-NZ-0kZ"/>
+                            <outlet property="delegate" destination="pv0-U0-uYo" id="7nW-ne-nlf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bad Boys" id="kP6-N9-kP1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rPe-sx-yr7">
+                            <connections>
+                                <segue destination="PM2-Ek-38g" kind="presentation" id="BlI-rW-32q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filterPicker" destination="5oe-NM-WeA" id="Osd-0y-ewd"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E8H-GU-hst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="-544"/>
+        </scene>
+    </scenes>
+</document>
