@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Behavior" representedClassName="Behavior" syncable="YES" codeGenerationType="class">
-        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="good" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="person" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activity" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="good" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="person" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Behavior" positionX="-54" positionY="-102" width="128" height="103"/>

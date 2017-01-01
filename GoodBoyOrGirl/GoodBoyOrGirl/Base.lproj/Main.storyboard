@@ -23,26 +23,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-Wo-3XI">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="283" y="629" width="68" height="30"/>
+                                <state key="normal" title="Add Entry"/>
                                 <connections>
                                     <action selector="addAction:" destination="PM2-Ek-38g" eventType="touchUpInside" id="TES-18-wCq"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-i8-f15">
-                                <rect key="frame" x="24" y="159" width="327" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="h46-ZF-Kva"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-i8-f15">
+                                <rect key="frame" x="24" y="158" width="327" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-x2-FUo">
+                                <rect key="frame" x="24" y="629" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="PM2-Ek-38g" eventType="touchUpInside" id="0OQ-j4-Exa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="bfu-Wo-3XI" secondAttribute="bottom" constant="20" id="0Nn-EG-JA5"/>
-                            <constraint firstItem="MEQ-i8-f15" firstAttribute="centerY" secondItem="CsU-mp-ATe" secondAttribute="centerY" id="5V8-3I-iVE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MEQ-i8-f15" secondAttribute="trailing" constant="8" id="AdH-sc-VHv"/>
-                            <constraint firstItem="bfu-Wo-3XI" firstAttribute="centerX" secondItem="CsU-mp-ATe" secondAttribute="centerX" id="I8l-vz-x7u"/>
-                            <constraint firstItem="MEQ-i8-f15" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="cCr-Kh-Kjp"/>
+                            <constraint firstItem="xNZ-x2-FUo" firstAttribute="leading" secondItem="CsU-mp-ATe" secondAttribute="leadingMargin" constant="8" id="B0p-a1-0dy"/>
+                            <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="bfu-Wo-3XI" secondAttribute="bottom" constant="8" id="iUf-7v-Dfm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bfu-Wo-3XI" secondAttribute="trailing" constant="8" id="ke6-Oe-OPX"/>
+                            <constraint firstItem="sMc-AZ-Rf7" firstAttribute="top" secondItem="xNZ-x2-FUo" secondAttribute="bottom" constant="8" id="s2C-7J-5xd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,12 +85,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="behaviorCells" id="ssq-Q4-LPJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="behaviorCells" textLabel="vSa-br-akF" detailTextLabel="kzP-Of-MVE" style="IBUITableViewCellStyleSubtitle" id="ssq-Q4-LPJ">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ssq-Q4-LPJ" id="BKZ-Tt-DR6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSa-br-akF">
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kzP-Of-MVE">
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

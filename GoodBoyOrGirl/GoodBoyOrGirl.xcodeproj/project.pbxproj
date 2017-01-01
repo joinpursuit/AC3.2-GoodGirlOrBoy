@@ -14,6 +14,7 @@
 		9ED39A7F1E18318F00833871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED39A7D1E18318F00833871 /* LaunchScreen.storyboard */; };
 		9ED39A871E186B0100833871 /* BehaviorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED39A861E186B0100833871 /* BehaviorTableViewController.swift */; };
 		9ED39A8B1E186BD400833871 /* AddBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED39A8A1E186BD400833871 /* AddBehaviorViewController.swift */; };
+		9ED39A8D1E187E6700833871 /* Behavior+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED39A8C1E187E6700833871 /* Behavior+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9ED39A801E18318F00833871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ED39A861E186B0100833871 /* BehaviorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorTableViewController.swift; sourceTree = "<group>"; };
 		9ED39A8A1E186BD400833871 /* AddBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBehaviorViewController.swift; sourceTree = "<group>"; };
+		9ED39A8C1E187E6700833871 /* Behavior+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Behavior+Date.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,10 @@
 		9ED39A701E18318F00833871 /* GoodBoyOrGirl */ = {
 			isa = PBXGroup;
 			children = (
-				9ED39A881E186BA100833871 /* Supporting Files */,
-				9ED39A751E18318F00833871 /* Main.storyboard */,
-				9ED39A781E18318F00833871 /* GoodBoyOrGirl.xcdatamodeld */,
 				9ED39A891E186BB300833871 /* Controllers */,
+				9ED39A8E1E18895A00833871 /* Extensions */,
+				9ED39A781E18318F00833871 /* GoodBoyOrGirl.xcdatamodeld */,
+				9ED39A881E186BA100833871 /* Supporting Files */,
 			);
 			path = GoodBoyOrGirl;
 			sourceTree = "<group>";
@@ -71,8 +73,9 @@
 			children = (
 				9ED39A711E18318F00833871 /* AppDelegate.swift */,
 				9ED39A7B1E18318F00833871 /* Assets.xcassets */,
-				9ED39A7D1E18318F00833871 /* LaunchScreen.storyboard */,
 				9ED39A801E18318F00833871 /* Info.plist */,
+				9ED39A7D1E18318F00833871 /* LaunchScreen.storyboard */,
+				9ED39A751E18318F00833871 /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -80,10 +83,18 @@
 		9ED39A891E186BB300833871 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9ED39A861E186B0100833871 /* BehaviorTableViewController.swift */,
 				9ED39A8A1E186BD400833871 /* AddBehaviorViewController.swift */,
+				9ED39A861E186B0100833871 /* BehaviorTableViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9ED39A8E1E18895A00833871 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9ED39A8C1E187E6700833871 /* Behavior+Date.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED39A8D1E187E6700833871 /* Behavior+Date.swift in Sources */,
 				9ED39A7A1E18318F00833871 /* GoodBoyOrGirl.xcdatamodeld in Sources */,
 				9ED39A871E186B0100833871 /* BehaviorTableViewController.swift in Sources */,
 				9ED39A8B1E186BD400833871 /* AddBehaviorViewController.swift in Sources */,
