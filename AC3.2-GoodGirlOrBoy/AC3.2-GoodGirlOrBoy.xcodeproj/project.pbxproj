@@ -14,6 +14,7 @@
 		DE4B64B41E15718600214F42 /* GoodBoyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B64B31E15718600214F42 /* GoodBoyTableViewController.swift */; };
 		DE4B64B81E159CE300214F42 /* BehaviorEvent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B64B71E159CE300214F42 /* BehaviorEvent+Extension.swift */; };
 		DE4B64BA1E15A57F00214F42 /* AddBehaviorEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B64B91E15A57F00214F42 /* AddBehaviorEventViewController.swift */; };
+		DE4B64BC1E1A8C0400214F42 /* BehaviorEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B64BB1E1A8C0400214F42 /* BehaviorEventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DE4B64B31E15718600214F42 /* GoodBoyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodBoyTableViewController.swift; sourceTree = "<group>"; };
 		DE4B64B71E159CE300214F42 /* BehaviorEvent+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorEvent+Extension.swift"; sourceTree = "<group>"; };
 		DE4B64B91E15A57F00214F42 /* AddBehaviorEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBehaviorEventViewController.swift; sourceTree = "<group>"; };
+		DE4B64BB1E1A8C0400214F42 /* BehaviorEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorEventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DE4B64B71E159CE300214F42 /* BehaviorEvent+Extension.swift */,
 				DE4B649E1E1560B600214F42 /* AppDelegate.swift */,
 				DE4B64B31E15718600214F42 /* GoodBoyTableViewController.swift */,
+				DE4B64BB1E1A8C0400214F42 /* BehaviorEventTableViewCell.swift */,
 				DE4B64B91E15A57F00214F42 /* AddBehaviorEventViewController.swift */,
 				DE4B64A81E1560B600214F42 /* Assets.xcassets */,
 				DE4B64AA1E1560B600214F42 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4B64BC1E1A8C0400214F42 /* BehaviorEventTableViewCell.swift in Sources */,
 				DE4B64B41E15718600214F42 /* GoodBoyTableViewController.swift in Sources */,
 				DE4B64A71E1560B600214F42 /* AC3_2_GoodGirlOrBoy.xcdatamodeld in Sources */,
 				DE4B64BA1E15A57F00214F42 /* AddBehaviorEventViewController.swift in Sources */,

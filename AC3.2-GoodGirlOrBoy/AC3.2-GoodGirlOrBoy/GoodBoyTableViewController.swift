@@ -62,10 +62,13 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func createTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "behaviorCell")
+        tableView.register(BehaviorEventTableViewCell.self, forCellReuseIdentifier: "behaviorEventCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tableView)
         _ = [
@@ -79,18 +82,18 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
     func initializeFetchedResultsController() {
         let request: NSFetchRequest<BehaviorEvent> = BehaviorEvent.fetchRequest()
         var sectionName = "date"
+        let dateSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.date), ascending: false)
+        let nameSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.name), ascending: true)
+        let typeSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.behaviorType), ascending: true)
         switch sortType {
         case .date:
-            let dateSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.date), ascending: false)
             request.sortDescriptors = [dateSort]
-            sectionName = "date"
+            sectionName = "dateString"
         case .name:
-            let nameSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.name), ascending: true)
-            request.sortDescriptors = [nameSort]
+            request.sortDescriptors = [nameSort, dateSort]
             sectionName = "name"
         case .type:
-            let typeSort = NSSortDescriptor(key: #keyPath(BehaviorEvent.behaviorType), ascending: true)
-            request.sortDescriptors = [typeSort]
+            request.sortDescriptors = [typeSort, nameSort, dateSort]
             sectionName = "behaviorType"
         }
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: mainContext, sectionNameKeyPath: sectionName, cacheName: nil)
@@ -156,9 +159,12 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "behaviorCell", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "behaviorEventCell", for: indexPath) as! BehaviorEventTableViewCell
         let behaviorEvent = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = behaviorEvent.localizedDescription
+        cell.titleLabel.text = behaviorEvent.localizedDescription
+        cell.dateLabel.text = behaviorEvent.dateAndTime
+        cell.descriptionLabel.text = behaviorEvent.behaviorDescription!
         return cell
     }
     
@@ -166,6 +172,12 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         if editingStyle == .delete {
             let object = fetchedResultsController.object(at: indexPath)
             mainContext.delete(object)
+            do {
+                try mainContext.save()
+            } catch let error {
+                fatalError("Failed to save context: \(error)")
+            }
+            
         }
     }
 

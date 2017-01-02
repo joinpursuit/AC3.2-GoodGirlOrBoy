@@ -10,11 +10,33 @@ import Foundation
 
 extension BehaviorEvent {
     var localizedDescription: String {
+        return "\(self.emoji) \(self.name!)"
+    }
+    var dateAndTime: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .medium
-        let dateString = formatter.string(from: date as! Date)
-        return "\(self.behaviorType!), \(self.name!), \(dateString)"
+        return formatter.string(from: date as! Date)
+    }
+    
+    var dateString: String {
+        let date = self.date!
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        let objectDateString = formatter.string(from: date as Date)
+        let todayDateString = formatter.string(from: NSDate() as Date)
+        if objectDateString == todayDateString {
+            return "Today"
+        }
+        return objectDateString
+    }
+    var emoji: String {
+        if self.behaviorType == "Prosocial" {
+            return "😇"
+        } else if self.behaviorType == "Antisocial" {
+            return "👿"
+        }
+        return ""
     }
 
 }
