@@ -21,6 +21,8 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
     
     var currentChild: Child?
     
+    var currentChildBehaviors: [Behavior?] = [Behavior?]()
+    
     var selectedProBehvaior: String?
     var selectedAntiBehavior: String?
     
@@ -183,7 +185,7 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         button1.addTarget(self, action: #selector(trackingChildOne), for: .touchUpInside)
     
         leftItem1.customView = button1
-        //leftItem1.style = .plain
+    
 
         
         button2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -192,12 +194,14 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         button2.setTitle("\(childrensNames[1].characters.first!)", for: .normal)
         button2.setTitleColor(.blue, for: .normal)
         leftItem2.customView = button2
-        //leftItem2.width = 50.0
+       
         print("\n\(childrensNames[1].characters.first)\n")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addBehaviorForChildButtonPressed))
         
         self.navigationItem.setLeftBarButtonItems([leftItem1, leftItem2], animated: true)
+        
+
         
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(navBarBackButtonPressed))
@@ -217,13 +221,14 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         print("\nPressed Button 1\n")
         currentChild = currentChildren[0]
         self.title = currentChild?.name
-        
+        tableView.reloadData()
     }
     
     func trackingChildTwo() {
         print("\nPressed Button 2\n")
         currentChild = currentChildren[1]
         self.title = currentChild?.name
+        tableView.reloadData()
     }
     
     func antiDoneButtonPressed() {
@@ -242,6 +247,7 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
                 antiBehavior.timestamp = NSDate()
                 antiBehavior.detail = antiBehaviorString
                 antiBehavior.isAntisocial = true
+                self.currentChildBehaviors.append(antiBehavior)
                     
                     //Save context
                     do {
@@ -251,11 +257,11 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
                     }
                 }
                 
-                //Refresh Tableview
-                self.tableView.reloadData()
-                
                 //go back to tableView controller (Refresh results)
                 let _ = self.navigationController?.popToRootViewController(animated: true)
+                
+                //Refresh Tableview
+                self.tableView.reloadData()
             }
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -273,14 +279,31 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         print("\nBUTTON PRESSED\n")
         
         
-        if let proBehavior = selectedProBehvaior {
-            print("\n\(proBehavior)\n")
+        if let proBehaviorString = selectedProBehvaior {
+            print("\n\(proBehaviorString)\n")
             //verify selection
-            let proConfirmation = UIAlertController(title: "Good Behavior Noted:", message: "\(proBehavior)", preferredStyle: .alert)
+            let proConfirmation = UIAlertController(title: "Good Behavior Noted:", message: "\(proBehaviorString)", preferredStyle: .alert)
             
             let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
                 //go back to tableView controller (Refresh results)
+                if let child = self.currentChild {
+                    print(child.name)
+                    let proBehavior = Behavior(context: self.managedContext)
+                    proBehavior.child = child
+                    proBehavior.timestamp = NSDate()
+                    proBehavior.isProsocial = true
+                    proBehavior.detail = proBehaviorString
+                    
+                    //Save context
+                    do {
+                        try self.managedContext.save()
+                    } catch let error as NSError {
+                        print("Save Error: \(error) \n\nDescription: \(error.userInfo)")
+                    }
+                }
                 let _ = self.navigationController?.popToRootViewController(animated: true)
+                
+                self.tableView.reloadData()
             }
             
             
@@ -506,10 +529,14 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
             let childName = child.name,
             let childBehaviors = child.behaviors else { return 1 }
         
+        
+        
         switch childName {
         case childName where childName == self.childrensNames[0]:
+            
             return childBehaviors.count
         case childName where childName == self.childrensNames[1]:
+           
             return childBehaviors.count
         default:
             return 1
@@ -529,9 +556,21 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         // Configure the cell...
         switch childName {
         case childName where childName == self.childrensNames[0]:
+            if behavior.isAntisocial {
+                cell.backgroundColor = .red
+            } else if behavior.isProsocial {
+                cell.backgroundColor = self.prosocialBlue
+            }
+            cell.textLabel?.textColor = .white
             cell.textLabel?.text = "\(behavior.detail!) \(dateFormatter.string(from: date))"
             return cell
         case childName where childName == self.childrensNames[1]:
+            if behavior.isAntisocial {
+                cell.backgroundColor = .red
+            } else if behavior.isProsocial {
+                cell.backgroundColor = self.prosocialBlue
+            }
+            cell.textLabel?.textColor = .white
             cell.textLabel?.text = "\(behavior.detail!) \(dateFormatter.string(from: date))"
             return cell
         default:
