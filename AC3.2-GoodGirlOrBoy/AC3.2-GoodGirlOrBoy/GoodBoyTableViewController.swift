@@ -38,12 +38,13 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         createSegmentControl()
         createNavButtons()
         initializeFetchedResultsController()
-        
     }
     
     func createNavButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonPressed))
+        navigationItem.title = "'Good Girl or Boy'"
+        navigationController?.view.backgroundColor = .white
     }
  
     func createSegmentControl() {
@@ -90,7 +91,7 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
             request.sortDescriptors = [dateSort]
             sectionName = "dateString"
         case .name:
-            request.sortDescriptors = [nameSort, dateSort]
+            request.sortDescriptors = [nameSort, typeSort, dateSort]
             sectionName = "name"
         case .type:
             request.sortDescriptors = [typeSort, nameSort, dateSort]
@@ -135,6 +136,7 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         }
         initializeFetchedResultsController()
         tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     
@@ -162,9 +164,24 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "behaviorEventCell", for: indexPath) as! BehaviorEventTableViewCell
         let behaviorEvent = fetchedResultsController.object(at: indexPath)
-        cell.titleLabel.text = behaviorEvent.localizedDescription
-        cell.dateLabel.text = behaviorEvent.dateAndTime
-        cell.descriptionLabel.text = behaviorEvent.behaviorDescription!
+        
+        switch sortType {
+        case .date:
+            cell.titleLabel.text = behaviorEvent.name
+            cell.dateLabel.text = behaviorEvent.time
+            cell.descriptionLabel.text = behaviorEvent.behaviorDescription!
+            cell.emojiLabel.text = behaviorEvent.emoji
+        case .name:
+            cell.dateLabel.text = "\(behaviorEvent.dateAndTime)  \(behaviorEvent.emoji)"
+            cell.descriptionLabel.text = behaviorEvent.behaviorDescription
+            cell.titleLabel.text = nil
+            cell.emojiLabel.text = nil
+        case .type:
+            cell.titleLabel.text = behaviorEvent.name
+            cell.dateLabel.text = behaviorEvent.dateAndTime
+            cell.descriptionLabel.text = behaviorEvent.behaviorDescription!
+            cell.emojiLabel.text = behaviorEvent.emoji
+        }
         return cell
     }
     

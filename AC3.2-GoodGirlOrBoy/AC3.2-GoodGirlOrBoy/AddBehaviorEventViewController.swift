@@ -54,6 +54,7 @@ class AddBehaviorEventViewController: UIViewController, UITextFieldDelegate {
                 _ = self.navigationController?.popViewController(animated: true) }
             alert.addAction(okayAction)
             present(alert, animated: true, completion: nil)
+            
         } else {
             let alert = UIAlertController(title: "Warning", message: "Name and Description fields must be filled in correctly", preferredStyle: .alert)
             let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -101,8 +102,5 @@ class AddBehaviorEventViewController: UIViewController, UITextFieldDelegate {
             behaviorTypeSelector.topAnchor.constraint(equalTo: behaviorTextField.bottomAnchor, constant: 8.0),
             behaviorTypeSelector.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ].map { $0.isActive = true }
-        
     }
-
-   
 }

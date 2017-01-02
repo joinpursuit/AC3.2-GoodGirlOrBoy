@@ -9,12 +9,16 @@
 import Foundation
 
 extension BehaviorEvent {
-    var localizedDescription: String {
-        return "\(self.emoji) \(self.name!)"
-    }
     var dateAndTime: String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        return formatter.string(from: date as! Date)
+    }
+    
+    var time: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
         formatter.timeStyle = .medium
         return formatter.string(from: date as! Date)
     }
