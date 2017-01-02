@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Behavior" representedClassName="Behavior" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAntisocial" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isProsocial" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="behaviors" inverseEntity="Child" syncable="YES"/>
+    </entity>
+    <entity name="Child" representedClassName="Child" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="behaviors" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Behavior" inverseName="child" inverseEntity="Behavior" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Child" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Behavior" positionX="-54" positionY="0" width="128" height="120"/>
+    </elements>
+</model>
