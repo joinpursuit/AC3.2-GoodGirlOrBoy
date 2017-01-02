@@ -36,6 +36,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7001109E1E16330400CBBCDE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7001104B1E14DF6B00CBBCDE /* goodOrbad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodOrbad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7001104E1E14DF6B00CBBCDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,15 +116,10 @@
 		7001104D1E14DF6B00CBBCDE /* goodOrbad */ = {
 			isa = PBXGroup;
 			children = (
-				7001104E1E14DF6B00CBBCDE /* AppDelegate.swift */,
-				700110501E14DF6B00CBBCDE /* ViewController.swift */,
-				700110521E14DF6B00CBBCDE /* Main.storyboard */,
-				700110811E15F7AF00CBBCDE /* ChildDetailViewController.swift */,
-				7001107F1E15E6BD00CBBCDE /* AddBehaviorViewController.swift */,
-				700110581E14DF6B00CBBCDE /* Assets.xcassets */,
-				7001105A1E14DF6B00CBBCDE /* LaunchScreen.storyboard */,
-				7001105D1E14DF6B00CBBCDE /* Info.plist */,
-				700110551E14DF6B00CBBCDE /* goodOrbad.xcdatamodeld */,
+				700110851E162CCD00CBBCDE /* View Controllers */,
+				700110871E162CF300CBBCDE /* UI */,
+				700110861E162CDD00CBBCDE /* Supporting Files */,
+				700110881E162CFD00CBBCDE /* Models */,
 			);
 			path = goodOrbad;
 			sourceTree = "<group>";
@@ -134,6 +142,43 @@
 			path = goodOrbadUITests;
 			sourceTree = "<group>";
 		};
+		700110851E162CCD00CBBCDE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				700110811E15F7AF00CBBCDE /* ChildDetailViewController.swift */,
+				7001107F1E15E6BD00CBBCDE /* AddBehaviorViewController.swift */,
+				700110501E14DF6B00CBBCDE /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		700110861E162CDD00CBBCDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7001104E1E14DF6B00CBBCDE /* AppDelegate.swift */,
+				7001105D1E14DF6B00CBBCDE /* Info.plist */,
+				700110581E14DF6B00CBBCDE /* Assets.xcassets */,
+				7001105A1E14DF6B00CBBCDE /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		700110871E162CF300CBBCDE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				700110521E14DF6B00CBBCDE /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		700110881E162CFD00CBBCDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				700110551E14DF6B00CBBCDE /* goodOrbad.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +189,7 @@
 				700110471E14DF6B00CBBCDE /* Sources */,
 				700110481E14DF6B00CBBCDE /* Frameworks */,
 				700110491E14DF6B00CBBCDE /* Resources */,
+				7001109E1E16330400CBBCDE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 700110791E14DF6B00CBBCDE /* Build configuration list for PBXNativeTarget "goodOrbadTests" */;
 			buildPhases = (
+				9005E5B476F4C49DE8C84AA7 /* [CP] Check Pods Manifest.lock */,
 				7001105E1E14DF6B00CBBCDE /* Sources */,
 				7001105F1E14DF6B00CBBCDE /* Frameworks */,
 				700110601E14DF6B00CBBCDE /* Resources */,
+				2C24BDDEA3523178CB757FBB /* [CP] Embed Pods Frameworks */,
+				348F0640E7985663DFA79D96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7001107C1E14DF6B00CBBCDE /* Build configuration list for PBXNativeTarget "goodOrbadUITests" */;
 			buildPhases = (
+				44F25B14108256D627440562 /* [CP] Check Pods Manifest.lock */,
 				700110691E14DF6B00CBBCDE /* Sources */,
 				7001106A1E14DF6B00CBBCDE /* Frameworks */,
 				7001106B1E14DF6B00CBBCDE /* Resources */,
+				613A739DCD46F07A1E08B4B1 /* [CP] Embed Pods Frameworks */,
+				14E9D883FDF967E1A9BE57F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +314,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14E9D883FDF967E1A9BE57F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodOrbadUITests/Pods-goodOrbadUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C24BDDEA3523178CB757FBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodOrbadTests/Pods-goodOrbadTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		348F0640E7985663DFA79D96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodOrbadTests/Pods-goodOrbadTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44F25B14108256D627440562 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		613A739DCD46F07A1E08B4B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodOrbadUITests/Pods-goodOrbadUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9005E5B476F4C49DE8C84AA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		700110471E14DF6B00CBBCDE /* Sources */ = {
@@ -517,6 +662,7 @@
 				700110781E14DF6B00CBBCDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		700110791E14DF6B00CBBCDE /* Build configuration list for PBXNativeTarget "goodOrbadTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +671,7 @@
 				7001107B1E14DF6B00CBBCDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7001107C1E14DF6B00CBBCDE /* Build configuration list for PBXNativeTarget "goodOrbadUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +680,7 @@
 				7001107E1E14DF6B00CBBCDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

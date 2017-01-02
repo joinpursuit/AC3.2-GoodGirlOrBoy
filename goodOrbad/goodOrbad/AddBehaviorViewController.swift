@@ -75,7 +75,6 @@ class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let selectedBehavior = behaviorsPicker.selectedRow(inComponent: 0)
 
         if goodOrBad.selectedSegmentIndex == goodIndex {
-            behaviorInstance.wasBad = false
             behaviorInstance.wasGood = true
             behaviorInstance.observedBehavior = goodBehaviors[selectedBehavior]
             
@@ -83,7 +82,6 @@ class AddBehaviorViewController: UIViewController, UIPickerViewDelegate, UIPicke
             navigationController!.popViewController(animated: true)
             
         } else {
-            behaviorInstance.wasBad = true
             behaviorInstance.wasGood = false
             behaviorInstance.observedBehavior = badBehaviors[selectedBehavior]
             

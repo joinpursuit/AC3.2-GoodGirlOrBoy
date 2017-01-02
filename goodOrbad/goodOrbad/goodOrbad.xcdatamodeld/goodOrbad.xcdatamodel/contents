@@ -4,10 +4,9 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="observedBehavior" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="wasBad" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="wasGood" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Behavior" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Behavior" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>
