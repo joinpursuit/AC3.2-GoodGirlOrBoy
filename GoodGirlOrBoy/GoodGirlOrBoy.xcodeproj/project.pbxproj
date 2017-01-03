@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CD6F9071E1B2171008D56DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6F9061E1B2171008D56DE /* AppDelegate.swift */; };
+		9CD6F90C1E1B2171008D56DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6F90A1E1B2171008D56DE /* Main.storyboard */; };
+		9CD6F90F1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6F90D1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodeld */; };
+		9CD6F9111E1B2171008D56DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6F9101E1B2171008D56DE /* Assets.xcassets */; };
+		9CD6F9141E1B2171008D56DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD6F9121E1B2171008D56DE /* LaunchScreen.storyboard */; };
+		9CD6F91C1E1B2209008D56DE /* GoodGirlOrBoyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6F91B1E1B2209008D56DE /* GoodGirlOrBoyTableViewController.swift */; };
+		9CD6F91E1E1B2849008D56DE /* Behavior+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6F91D1E1B2849008D56DE /* Behavior+Addition.swift */; };
+		9CD6F9201E1B2C41008D56DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6F91F1E1B2C41008D56DE /* DetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9CD6F9031E1B2171008D56DE /* GoodGirlOrBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodGirlOrBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CD6F9061E1B2171008D56DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9CD6F90B1E1B2171008D56DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CD6F90E1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoodGirlOrBoy.xcdatamodel; sourceTree = "<group>"; };
+		9CD6F9101E1B2171008D56DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CD6F9131E1B2171008D56DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9CD6F9151E1B2171008D56DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD6F91B1E1B2209008D56DE /* GoodGirlOrBoyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodGirlOrBoyTableViewController.swift; sourceTree = "<group>"; };
+		9CD6F91D1E1B2849008D56DE /* Behavior+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Behavior+Addition.swift"; sourceTree = "<group>"; };
+		9CD6F91F1E1B2C41008D56DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CD6F9001E1B2171008D56DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CD6F8FA1E1B2171008D56DE = {
+			isa = PBXGroup;
+			children = (
+				9CD6F9051E1B2171008D56DE /* GoodGirlOrBoy */,
+				9CD6F9041E1B2171008D56DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CD6F9041E1B2171008D56DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F9031E1B2171008D56DE /* GoodGirlOrBoy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CD6F9051E1B2171008D56DE /* GoodGirlOrBoy */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F9061E1B2171008D56DE /* AppDelegate.swift */,
+				9CD6F9211E1B332D008D56DE /* ViewController */,
+				9CD6F9221E1B3336008D56DE /* Storyboard */,
+				9CD6F9231E1B3344008D56DE /* Helper */,
+				9CD6F9241E1B334A008D56DE /* CoreData */,
+			);
+			path = GoodGirlOrBoy;
+			sourceTree = "<group>";
+		};
+		9CD6F9211E1B332D008D56DE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F91B1E1B2209008D56DE /* GoodGirlOrBoyTableViewController.swift */,
+				9CD6F91F1E1B2C41008D56DE /* DetailViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9CD6F9221E1B3336008D56DE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F90A1E1B2171008D56DE /* Main.storyboard */,
+				9CD6F9121E1B2171008D56DE /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		9CD6F9231E1B3344008D56DE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F9101E1B2171008D56DE /* Assets.xcassets */,
+				9CD6F9151E1B2171008D56DE /* Info.plist */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		9CD6F9241E1B334A008D56DE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9CD6F90D1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodeld */,
+				9CD6F91D1E1B2849008D56DE /* Behavior+Addition.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CD6F9021E1B2171008D56DE /* GoodGirlOrBoy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CD6F9181E1B2171008D56DE /* Build configuration list for PBXNativeTarget "GoodGirlOrBoy" */;
+			buildPhases = (
+				9CD6F8FF1E1B2171008D56DE /* Sources */,
+				9CD6F9001E1B2171008D56DE /* Frameworks */,
+				9CD6F9011E1B2171008D56DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoodGirlOrBoy;
+			productName = GoodGirlOrBoy;
+			productReference = 9CD6F9031E1B2171008D56DE /* GoodGirlOrBoy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CD6F8FB1E1B2171008D56DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Annie Tung";
+				TargetAttributes = {
+					9CD6F9021E1B2171008D56DE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9F7X637BX9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9CD6F8FE1E1B2171008D56DE /* Build configuration list for PBXProject "GoodGirlOrBoy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CD6F8FA1E1B2171008D56DE;
+			productRefGroup = 9CD6F9041E1B2171008D56DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CD6F9021E1B2171008D56DE /* GoodGirlOrBoy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CD6F9011E1B2171008D56DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD6F9141E1B2171008D56DE /* LaunchScreen.storyboard in Resources */,
+				9CD6F9111E1B2171008D56DE /* Assets.xcassets in Resources */,
+				9CD6F90C1E1B2171008D56DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CD6F8FF1E1B2171008D56DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD6F9071E1B2171008D56DE /* AppDelegate.swift in Sources */,
+				9CD6F91E1E1B2849008D56DE /* Behavior+Addition.swift in Sources */,
+				9CD6F9201E1B2C41008D56DE /* DetailViewController.swift in Sources */,
+				9CD6F91C1E1B2209008D56DE /* GoodGirlOrBoyTableViewController.swift in Sources */,
+				9CD6F90F1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9CD6F90A1E1B2171008D56DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CD6F90B1E1B2171008D56DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CD6F9121E1B2171008D56DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CD6F9131E1B2171008D56DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CD6F9161E1B2171008D56DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CD6F9171E1B2171008D56DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CD6F9191E1B2171008D56DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F7X637BX9;
+				INFOPLIST_FILE = GoodGirlOrBoy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tung.annie.c4q.GoodGirlOrBoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9CD6F91A1E1B2171008D56DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F7X637BX9;
+				INFOPLIST_FILE = GoodGirlOrBoy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tung.annie.c4q.GoodGirlOrBoy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CD6F8FE1E1B2171008D56DE /* Build configuration list for PBXProject "GoodGirlOrBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD6F9161E1B2171008D56DE /* Debug */,
+				9CD6F9171E1B2171008D56DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CD6F9181E1B2171008D56DE /* Build configuration list for PBXNativeTarget "GoodGirlOrBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CD6F9191E1B2171008D56DE /* Debug */,
+				9CD6F91A1E1B2171008D56DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9CD6F90D1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9CD6F90E1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodel */,
+			);
+			currentVersion = 9CD6F90E1E1B2171008D56DE /* GoodGirlOrBoy.xcdatamodel */;
+			path = GoodGirlOrBoy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9CD6F8FB1E1B2171008D56DE /* Project object */;
+}
