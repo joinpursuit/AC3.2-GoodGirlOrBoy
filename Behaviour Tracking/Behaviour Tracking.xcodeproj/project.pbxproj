@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDF1EC211E144DDC00DEF9BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC201E144DDC00DEF9BA /* AppDelegate.swift */; };
+		EDF1EC291E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC271E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodeld */; };
+		EDF1EC2B1E144DDC00DEF9BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF1EC2A1E144DDC00DEF9BA /* Assets.xcassets */; };
+		EDF1EC2E1E144DDC00DEF9BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF1EC2C1E144DDC00DEF9BA /* LaunchScreen.storyboard */; };
+		EDF1EC381E161DB400DEF9BA /* BehaviourLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC371E161DB400DEF9BA /* BehaviourLogTableViewController.swift */; };
+		EDF1EC3D1E1631F100DEF9BA /* NewBehaviourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC3C1E1631F100DEF9BA /* NewBehaviourViewController.swift */; };
+		EDF1EC3F1E163C7C00DEF9BA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC3E1E163C7C00DEF9BA /* UserInfo.swift */; };
+		EDF1EC411E1795FC00DEF9BA /* ExtensionToEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF1EC401E1795FC00DEF9BA /* ExtensionToEvent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDF1EC1D1E144DDC00DEF9BA /* Behaviour Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Behaviour Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF1EC201E144DDC00DEF9BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDF1EC281E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Behaviour_Tracking.xcdatamodel; sourceTree = "<group>"; };
+		EDF1EC2A1E144DDC00DEF9BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDF1EC2D1E144DDC00DEF9BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDF1EC2F1E144DDC00DEF9BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF1EC371E161DB400DEF9BA /* BehaviourLogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviourLogTableViewController.swift; sourceTree = "<group>"; };
+		EDF1EC3C1E1631F100DEF9BA /* NewBehaviourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBehaviourViewController.swift; sourceTree = "<group>"; };
+		EDF1EC3E1E163C7C00DEF9BA /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		EDF1EC401E1795FC00DEF9BA /* ExtensionToEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionToEvent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF1EC1A1E144DDB00DEF9BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDF1EC141E144DDB00DEF9BA = {
+			isa = PBXGroup;
+			children = (
+				EDF1EC1F1E144DDC00DEF9BA /* Behaviour Tracking */,
+				EDF1EC1E1E144DDC00DEF9BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF1EC1E1E144DDC00DEF9BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF1EC1D1E144DDC00DEF9BA /* Behaviour Tracking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDF1EC1F1E144DDC00DEF9BA /* Behaviour Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				EDF1EC201E144DDC00DEF9BA /* AppDelegate.swift */,
+				EDF1EC271E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodeld */,
+				EDF1EC361E161CE300DEF9BA /* Controllers */,
+				EDF1EC351E161CD700DEF9BA /* Views */,
+				EDF1EC2A1E144DDC00DEF9BA /* Assets.xcassets */,
+				EDF1EC2F1E144DDC00DEF9BA /* Info.plist */,
+				EDF1EC3E1E163C7C00DEF9BA /* UserInfo.swift */,
+				EDF1EC401E1795FC00DEF9BA /* ExtensionToEvent.swift */,
+			);
+			path = "Behaviour Tracking";
+			sourceTree = "<group>";
+		};
+		EDF1EC351E161CD700DEF9BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDF1EC2C1E144DDC00DEF9BA /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EDF1EC361E161CE300DEF9BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDF1EC371E161DB400DEF9BA /* BehaviourLogTableViewController.swift */,
+				EDF1EC3C1E1631F100DEF9BA /* NewBehaviourViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDF1EC1C1E144DDB00DEF9BA /* Behaviour Tracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF1EC321E144DDC00DEF9BA /* Build configuration list for PBXNativeTarget "Behaviour Tracking" */;
+			buildPhases = (
+				EDF1EC191E144DDB00DEF9BA /* Sources */,
+				EDF1EC1A1E144DDB00DEF9BA /* Frameworks */,
+				EDF1EC1B1E144DDB00DEF9BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Behaviour Tracking";
+			productName = "Behaviour Tracking";
+			productReference = EDF1EC1D1E144DDC00DEF9BA /* Behaviour Tracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF1EC151E144DDB00DEF9BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Tong Lin";
+				TargetAttributes = {
+					EDF1EC1C1E144DDB00DEF9BA = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 7NBTE6SY4Z;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EDF1EC181E144DDB00DEF9BA /* Build configuration list for PBXProject "Behaviour Tracking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDF1EC141E144DDB00DEF9BA;
+			productRefGroup = EDF1EC1E1E144DDC00DEF9BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF1EC1C1E144DDB00DEF9BA /* Behaviour Tracking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDF1EC1B1E144DDB00DEF9BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF1EC2E1E144DDC00DEF9BA /* LaunchScreen.storyboard in Resources */,
+				EDF1EC2B1E144DDC00DEF9BA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF1EC191E144DDB00DEF9BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF1EC211E144DDC00DEF9BA /* AppDelegate.swift in Sources */,
+				EDF1EC411E1795FC00DEF9BA /* ExtensionToEvent.swift in Sources */,
+				EDF1EC381E161DB400DEF9BA /* BehaviourLogTableViewController.swift in Sources */,
+				EDF1EC3D1E1631F100DEF9BA /* NewBehaviourViewController.swift in Sources */,
+				EDF1EC3F1E163C7C00DEF9BA /* UserInfo.swift in Sources */,
+				EDF1EC291E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDF1EC2C1E144DDC00DEF9BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF1EC2D1E144DDC00DEF9BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDF1EC301E144DDC00DEF9BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDF1EC311E144DDC00DEF9BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDF1EC331E144DDC00DEF9BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7NBTE6SY4Z;
+				INFOPLIST_FILE = "Behaviour Tracking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tonglin.t91-gmail.com.Behaviour-Tracking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EDF1EC341E144DDC00DEF9BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7NBTE6SY4Z;
+				INFOPLIST_FILE = "Behaviour Tracking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tonglin.t91-gmail.com.Behaviour-Tracking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF1EC181E144DDB00DEF9BA /* Build configuration list for PBXProject "Behaviour Tracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF1EC301E144DDC00DEF9BA /* Debug */,
+				EDF1EC311E144DDC00DEF9BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF1EC321E144DDC00DEF9BA /* Build configuration list for PBXNativeTarget "Behaviour Tracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF1EC331E144DDC00DEF9BA /* Debug */,
+				EDF1EC341E144DDC00DEF9BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EDF1EC271E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EDF1EC281E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodel */,
+			);
+			currentVersion = EDF1EC281E144DDC00DEF9BA /* Behaviour_Tracking.xcdatamodel */;
+			path = Behaviour_Tracking.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EDF1EC151E144DDB00DEF9BA /* Project object */;
+}
