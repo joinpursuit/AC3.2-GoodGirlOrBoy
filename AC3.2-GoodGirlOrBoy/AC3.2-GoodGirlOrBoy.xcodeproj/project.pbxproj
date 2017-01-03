@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A70B04041E14C7930093CBBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B04031E14C7930093CBBE /* AppDelegate.swift */; };
+		A70B040C1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A70B040A1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodeld */; };
+		A70B040E1E14C7930093CBBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70B040D1E14C7930093CBBE /* Assets.xcassets */; };
+		A70B04111E14C7930093CBBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70B040F1E14C7930093CBBE /* LaunchScreen.storyboard */; };
+		A70B04191E14C9E90093CBBE /* BehaviorEvent+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B04181E14C9E90093CBBE /* BehaviorEvent+Addition.swift */; };
+		A70B041D1E14CE4D0093CBBE /* BehaviorEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B041C1E14CE4D0093CBBE /* BehaviorEventTableViewCell.swift */; };
+		A70B041E1E14CE6B0093CBBE /* BehaviorEventTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B041A1E14CA2A0093CBBE /* BehaviorEventTrackerTableViewController.swift */; };
+		A70B04201E14DFF40093CBBE /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B041F1E14DFF40093CBBE /* InputViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A70B04001E14C7930093CBBE /* AC3.2-GoodGirlOrBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC3.2-GoodGirlOrBoy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70B04031E14C7930093CBBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A70B040B1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AC3_2_GoodGirlOrBoy.xcdatamodel; sourceTree = "<group>"; };
+		A70B040D1E14C7930093CBBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A70B04101E14C7930093CBBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A70B04121E14C7930093CBBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70B04181E14C9E90093CBBE /* BehaviorEvent+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorEvent+Addition.swift"; sourceTree = "<group>"; };
+		A70B041A1E14CA2A0093CBBE /* BehaviorEventTrackerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorEventTrackerTableViewController.swift; sourceTree = "<group>"; };
+		A70B041C1E14CE4D0093CBBE /* BehaviorEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorEventTableViewCell.swift; sourceTree = "<group>"; };
+		A70B041F1E14DFF40093CBBE /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A70B03FD1E14C7930093CBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A70B03F71E14C7930093CBBE = {
+			isa = PBXGroup;
+			children = (
+				A70B04021E14C7930093CBBE /* AC3.2-GoodGirlOrBoy */,
+				A70B04011E14C7930093CBBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A70B04011E14C7930093CBBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A70B04001E14C7930093CBBE /* AC3.2-GoodGirlOrBoy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A70B04021E14C7930093CBBE /* AC3.2-GoodGirlOrBoy */ = {
+			isa = PBXGroup;
+			children = (
+				A70B04031E14C7930093CBBE /* AppDelegate.swift */,
+				A70B041A1E14CA2A0093CBBE /* BehaviorEventTrackerTableViewController.swift */,
+				A70B041F1E14DFF40093CBBE /* InputViewController.swift */,
+				A70B041C1E14CE4D0093CBBE /* BehaviorEventTableViewCell.swift */,
+				A70B04181E14C9E90093CBBE /* BehaviorEvent+Addition.swift */,
+				A70B040D1E14C7930093CBBE /* Assets.xcassets */,
+				A70B040F1E14C7930093CBBE /* LaunchScreen.storyboard */,
+				A70B04121E14C7930093CBBE /* Info.plist */,
+				A70B040A1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodeld */,
+			);
+			path = "AC3.2-GoodGirlOrBoy";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A70B03FF1E14C7930093CBBE /* AC3.2-GoodGirlOrBoy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70B04151E14C7930093CBBE /* Build configuration list for PBXNativeTarget "AC3.2-GoodGirlOrBoy" */;
+			buildPhases = (
+				A70B03FC1E14C7930093CBBE /* Sources */,
+				A70B03FD1E14C7930093CBBE /* Frameworks */,
+				A70B03FE1E14C7930093CBBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AC3.2-GoodGirlOrBoy";
+			productName = "AC3.2-GoodGirlOrBoy";
+			productReference = A70B04001E14C7930093CBBE /* AC3.2-GoodGirlOrBoy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70B03F81E14C7930093CBBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = C4Q;
+				TargetAttributes = {
+					A70B03FF1E14C7930093CBBE = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A70B03FB1E14C7930093CBBE /* Build configuration list for PBXProject "AC3.2-GoodGirlOrBoy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A70B03F71E14C7930093CBBE;
+			productRefGroup = A70B04011E14C7930093CBBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A70B03FF1E14C7930093CBBE /* AC3.2-GoodGirlOrBoy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A70B03FE1E14C7930093CBBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70B04111E14C7930093CBBE /* LaunchScreen.storyboard in Resources */,
+				A70B040E1E14C7930093CBBE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70B03FC1E14C7930093CBBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70B041E1E14CE6B0093CBBE /* BehaviorEventTrackerTableViewController.swift in Sources */,
+				A70B04191E14C9E90093CBBE /* BehaviorEvent+Addition.swift in Sources */,
+				A70B041D1E14CE4D0093CBBE /* BehaviorEventTableViewCell.swift in Sources */,
+				A70B04201E14DFF40093CBBE /* InputViewController.swift in Sources */,
+				A70B040C1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodeld in Sources */,
+				A70B04041E14C7930093CBBE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A70B040F1E14C7930093CBBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A70B04101E14C7930093CBBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A70B04131E14C7930093CBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A70B04141E14C7930093CBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A70B04161E14C7930093CBBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "AC3.2-GoodGirlOrBoy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.anama.AC3-2-GoodGirlOrBoy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A70B04171E14C7930093CBBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "AC3.2-GoodGirlOrBoy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.c4q.anama.AC3-2-GoodGirlOrBoy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A70B03FB1E14C7930093CBBE /* Build configuration list for PBXProject "AC3.2-GoodGirlOrBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70B04131E14C7930093CBBE /* Debug */,
+				A70B04141E14C7930093CBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70B04151E14C7930093CBBE /* Build configuration list for PBXNativeTarget "AC3.2-GoodGirlOrBoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70B04161E14C7930093CBBE /* Debug */,
+				A70B04171E14C7930093CBBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A70B040A1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A70B040B1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodel */,
+			);
+			currentVersion = A70B040B1E14C7930093CBBE /* AC3_2_GoodGirlOrBoy.xcdatamodel */;
+			path = AC3_2_GoodGirlOrBoy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A70B03F81E14C7930093CBBE /* Project object */;
+}
