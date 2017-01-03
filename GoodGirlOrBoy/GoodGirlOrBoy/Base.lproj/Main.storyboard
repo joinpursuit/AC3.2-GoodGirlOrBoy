@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UdW-Ha-tAV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Display Events View Controller-->
+        <scene sceneID="7eh-ml-QVa">
+            <objects>
+                <viewController id="FA8-W0-KhR" customClass="DisplayEventsViewController" customModule="GoodGirlOrBoy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zhz-cT-kO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yz5-jl-zGA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tQC-Yj-U4N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1s0-gC-I65">
+                                <rect key="frame" x="86" y="72" width="203" height="29"/>
+                                <segments>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                    <segment title="Behavior"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filterValueChanged:" destination="FA8-W0-KhR" eventType="valueChanged" id="gHd-eu-agC"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K0o-tv-DSG">
+                                <rect key="frame" x="16" y="108" width="343" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BehaviorEventCell" id="QLa-Vw-ZgQ">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QLa-Vw-ZgQ" id="wLr-Jp-aL9">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FA8-W0-KhR" id="AJq-js-gyj"/>
+                                    <outlet property="delegate" destination="FA8-W0-KhR" id="mEp-af-qe3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1s0-gC-I65" firstAttribute="top" secondItem="zhz-cT-kO7" secondAttribute="bottom" constant="8" symbolic="YES" id="3aq-Ff-81N"/>
+                            <constraint firstItem="Yz5-jl-zGA" firstAttribute="top" secondItem="K0o-tv-DSG" secondAttribute="bottom" constant="8" symbolic="YES" id="D4X-c2-0Nd"/>
+                            <constraint firstItem="K0o-tv-DSG" firstAttribute="top" secondItem="1s0-gC-I65" secondAttribute="bottom" constant="8" symbolic="YES" id="Fwk-WR-2Cz"/>
+                            <constraint firstItem="K0o-tv-DSG" firstAttribute="trailing" secondItem="tQC-Yj-U4N" secondAttribute="trailingMargin" id="WCZ-B5-hK9"/>
+                            <constraint firstItem="1s0-gC-I65" firstAttribute="centerX" secondItem="tQC-Yj-U4N" secondAttribute="centerX" id="lDx-zY-doP"/>
+                            <constraint firstItem="K0o-tv-DSG" firstAttribute="leading" secondItem="tQC-Yj-U4N" secondAttribute="leadingMargin" id="sgd-4u-VPV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2mG-Dq-22k">
+                        <barButtonItem key="leftBarButtonItem" title="−" id="5ww-K2-NDH">
+                            <connections>
+                                <segue destination="fym-eR-FB7" kind="show" identifier="NegativeBehaviorSelected" id="11h-Kf-hDd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7J2-rt-QU1">
+                            <connections>
+                                <segue destination="fym-eR-FB7" kind="show" identifier="PositiveBehaviorSelected" id="wP5-Ua-LvP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="1s0-gC-I65" id="f88-3c-ygp"/>
+                        <outlet property="tableView" destination="K0o-tv-DSG" id="CfO-tJ-Ta3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zuj-fS-hGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223.1999999999998" y="729.08545727136436"/>
+        </scene>
+        <!--Add Behavior Event View Controller-->
+        <scene sceneID="iHf-TB-Mf8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ro7-Vq-hON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="fym-eR-FB7" customClass="AddBehaviorEventViewController" customModule="GoodGirlOrBoy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZF-gX-Agi"/>
+                        <viewControllerLayoutGuide type="bottom" id="QSf-7K-3UU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C20-0t-eX6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-Da-394">
+                                <rect key="frame" x="0.0" y="101" width="375" height="558"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fym-eR-FB7" id="e8F-mk-zNZ"/>
+                                    <outlet property="delegate" destination="fym-eR-FB7" id="0zY-Pq-LEX"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Please select a behavior" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6m-NP-6Go">
+                                <rect key="frame" x="95" y="72" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6m-NP-6Go" firstAttribute="top" secondItem="DZF-gX-Agi" secondAttribute="bottom" constant="8" symbolic="YES" id="0N8-oN-nwR"/>
+                            <constraint firstItem="QSf-7K-3UU" firstAttribute="top" secondItem="XOw-Da-394" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcx-Fk-bo3"/>
+                            <constraint firstItem="XOw-Da-394" firstAttribute="top" secondItem="E6m-NP-6Go" secondAttribute="bottom" constant="8" symbolic="YES" id="NUl-4J-Quy"/>
+                            <constraint firstItem="XOw-Da-394" firstAttribute="leading" secondItem="C20-0t-eX6" secondAttribute="leading" id="Nv4-LE-4QC"/>
+                            <constraint firstAttribute="trailing" secondItem="XOw-Da-394" secondAttribute="trailing" id="RkO-rv-aSc"/>
+                            <constraint firstItem="E6m-NP-6Go" firstAttribute="centerX" secondItem="C20-0t-eX6" secondAttribute="centerX" id="Yhm-fT-9Rt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lli-m3-6i4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ljs-6q-p4H">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="fym-eR-FB7" id="bsY-Rg-2tz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="behaviorPickerView" destination="XOw-Da-394" id="0sF-ZM-4cb"/>
+                        <outlet property="selectBehaviorLabel" destination="E6m-NP-6Go" id="I8x-FR-4yM"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3077.5999999999999" y="727.28635682158927"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zID-Ps-Bsm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UdW-Ha-tAV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Dc-tD-Ckj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FA8-W0-KhR" kind="relationship" relationship="rootViewController" id="Dlx-r8-GUJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OW2-I7-FTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="728.18590704647681"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wP5-Ua-LvP"/>
+    </inferredMetricsTieBreakers>
+</document>
