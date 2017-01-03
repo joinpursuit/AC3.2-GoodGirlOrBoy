@@ -26,6 +26,7 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
     var selectedProBehvaior: String?
     var selectedAntiBehavior: String?
     
+    //MARK: Programmatic View Declarations
     let prosocialBlue = UIColor(red: 51.0/255, green: 204.0/255, blue: 255.0/255, alpha: 1)
     
     lazy var dateFormatter: DateFormatter = {
@@ -147,9 +148,39 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
     let button2 = UIButton()
     let leftItem2 = UIBarButtonItem()
     
+    let tableviewBackgroundImageView = UIImageView(image: #imageLiteral(resourceName: "S1110-2"))
+    
+    lazy var initialPromptLabel: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .red
+        label.textAlignment = .justified
+        label.text = "  \u{21E7} To start tracking, choose a child"
+        label.numberOfLines = 0
+        label.font = label.font.withSize(25.0)
+        label.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        return label
+    }()
 
+    func setupInitialPromptLabel() {
+        let _ = [
+            initialPromptLabel.heightAnchor.constraint(equalToConstant: 40),
+            initialPromptLabel.widthAnchor.constraint(equalTo: tableviewBackgroundImageView.widthAnchor),
+            initialPromptLabel.leadingAnchor.constraint(equalTo: tableviewBackgroundImageView.leadingAnchor, constant: 8),
+            initialPromptLabel.trailingAnchor.constraint(equalTo: tableviewBackgroundImageView.trailingAnchor, constant: 8),
+            initialPromptLabel.topAnchor.constraint(equalTo: tableviewBackgroundImageView.topAnchor, constant: 80)
+            ].map { $0.isActive = true }
+    }
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableviewBackgroundImageView.addSubview(initialPromptLabel)
+        setupInitialPromptLabel()
+        self.tableView.backgroundView = tableviewBackgroundImageView
+        tableView.allowsSelection = false
+       
         
         //insert children into Core Data. Check for duplicates
         for childName in childrensNames {
@@ -175,15 +206,20 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         }
         
         
-        //Nav Bar Stuff
-        self.title = ""
+        //Nav Bar Setup
+        self.title = "Behavior Tracker"
         
+        //Set left bar button items
         button1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button1.backgroundColor = .clear
         button1.setTitle("\(childrensNames[0].characters.first!)", for: .normal)
         button1.setTitleColor(.magenta, for: .normal)
+        button1.layer.borderWidth = 1.5
+        button1.layer.borderColor = UIColor.red.cgColor
+        button1.layer.cornerRadius = 0.5 * button1.bounds.size.width
+        button1.clipsToBounds = true
         button1.addTarget(self, action: #selector(trackingChildOne), for: .touchUpInside)
-    
+        button1.isSelected = false
         leftItem1.customView = button1
     
 
@@ -192,48 +228,75 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         button2.addTarget(self, action: #selector(trackingChildTwo), for: .touchUpInside)
         button2.backgroundColor = .clear
         button2.setTitle("\(childrensNames[1].characters.first!)", for: .normal)
+        button2.layer.borderWidth = 1.5
+        button2.layer.borderColor = UIColor.red.cgColor
+        button2.layer.cornerRadius = 0.5 * button2.bounds.size.width
+        button2.clipsToBounds = true
         button2.setTitleColor(.blue, for: .normal)
         leftItem2.customView = button2
-       
-        print("\n\(childrensNames[1].characters.first)\n")
+        
+        
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addBehaviorForChildButtonPressed))
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         self.navigationItem.setLeftBarButtonItems([leftItem1, leftItem2], animated: true)
-        
-
         
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(navBarBackButtonPressed))
         self.navigationItem.backBarButtonItem = newBackButton
-        
-        //tableView.reloadData()
-        
     }
     
+    // MARK: Button Actions/Methods
     func navBarBackButtonPressed() {
-        print("\nWTF!\n")
          _ = navigationController?.popViewController(animated: true)
     }
     
-    
+    //Two methods below are used to toggle between children and lists of behaviors
     func trackingChildOne() {
-        print("\nPressed Button 1\n")
+        initialPromptLabel.removeFromSuperview()
         currentChild = currentChildren[0]
+        
+        button1.isSelected = true
+        button2.isSelected = false
+        
+        if button1.isSelected {
+            button1.backgroundColor = UIColor.magenta.withAlphaComponent(0.2)
+            button2.backgroundColor = .clear
+            button1.layer.borderColor = UIColor.clear.cgColor
+            button2.layer.borderColor = UIColor.clear.cgColor
+            self.tableView.backgroundView = nil
+            self.tableView.backgroundColor = UIColor.magenta.withAlphaComponent(0.5)
+            self.navigationController?.navigationBar.backgroundColor = UIColor.magenta.withAlphaComponent(0.7)
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        
         self.title = currentChild?.name
         tableView.reloadData()
     }
     
     func trackingChildTwo() {
-        print("\nPressed Button 2\n")
+        initialPromptLabel.removeFromSuperview()
+        button1.isSelected = false
+        button2.isSelected = true
+
+        if button2.isSelected {
+            button2.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+            button1.backgroundColor = .clear
+            button1.layer.borderColor = UIColor.clear.cgColor
+            button2.layer.borderColor = UIColor.clear.cgColor
+            self.tableView.backgroundView = nil
+            self.tableView.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+            self.navigationController?.navigationBar.backgroundColor = UIColor.blue.withAlphaComponent(0.7)
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        
         currentChild = currentChildren[1]
         self.title = currentChild?.name
         tableView.reloadData()
     }
     
     func antiDoneButtonPressed() {
-        print("\nBUTTON PRESSED\n")
-        
         if let antiBehaviorString = selectedAntiBehavior {
             print(antiBehaviorString)
             let antiConfirmation = UIAlertController(title: "Bad Behavior Noted", message: "\(antiBehaviorString)", preferredStyle: .alert)
@@ -264,9 +327,33 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
                 self.tableView.reloadData()
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let addAnotherBehaviorAction = UIAlertAction(title: "Add More Bad Behaviors", style: .default) { (action) in
+                if let child = self.currentChild {
+                    print(child.name!)
+                    let antiBehavior = Behavior(context: self.managedContext)
+                    antiBehavior.child = child
+                    antiBehavior.timestamp = NSDate()
+                    antiBehavior.detail = antiBehaviorString
+                    antiBehavior.isAntisocial = true
+                    self.currentChildBehaviors.append(antiBehavior)
+                    
+                    //Save context
+                    do {
+                        try self.managedContext.save()
+                    } catch let error as NSError {
+                        print("Save Error: \(error) \n\nDescription: \(error.userInfo)")
+                    }
+                }
+                //Refresh Tableview
+                self.tableView.reloadData()
+            }
             
-            let addAnotherBehaviorAction = UIAlertAction(title: "Add More Bad Behaviors", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                self.antisocialPickerBackgroundView.removeFromSuperview()
+                self.antiImageView.removeFromSuperview()
+            }
+            
+            
             
             antiConfirmation.addAction(okAction)
             antiConfirmation.addAction(cancelAction)
@@ -276,9 +363,6 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
     }
     
     func proDoneButtonPressed() {
-        print("\nBUTTON PRESSED\n")
-        
-        
         if let proBehaviorString = selectedProBehvaior {
             print("\n\(proBehaviorString)\n")
             //verify selection
@@ -307,9 +391,29 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
             }
             
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                self.prosocialPickerBackgroundView.removeFromSuperview()
+                self.proImageView.removeFromSuperview()
+            }
             
-            let addAnotherBehaviorAction = UIAlertAction(title: "Add More Good Behaviors", style: .default, handler: nil)
+            let addAnotherBehaviorAction = UIAlertAction(title: "Add More Good Behaviors", style: .default) { (action) in
+                if let child = self.currentChild {
+                    print(child.name)
+                    let proBehavior = Behavior(context: self.managedContext)
+                    proBehavior.child = child
+                    proBehavior.timestamp = NSDate()
+                    proBehavior.isProsocial = true
+                    proBehavior.detail = proBehaviorString
+                    
+                    //Save context
+                    do {
+                        try self.managedContext.save()
+                    } catch let error as NSError {
+                        print("Save Error: \(error) \n\nDescription: \(error.userInfo)")
+                    }
+                }
+                self.tableView.reloadData()
+                }
             
             proConfirmation.addAction(okAction)
             proConfirmation.addAction(cancelAction)
@@ -516,20 +620,17 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-       return 1
+        return 1
         
     }
     
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+     
         guard let child = currentChild,
             let childName = child.name,
             let childBehaviors = child.behaviors else { return 1 }
-        
-        
         
         switch childName {
         case childName where childName == self.childrensNames[0]:
@@ -541,12 +642,11 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         default:
             return 1
         }
-        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Behavior", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Behavior", for: indexPath) as! BehaviorTableViewCell
         
         guard let currentChild = currentChild,
             let behavior = currentChild.behaviors?[indexPath.row] as? Behavior,
@@ -558,22 +658,37 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         case childName where childName == self.childrensNames[0]:
             if behavior.isAntisocial {
                 cell.backgroundColor = .red
+                cell.behaviorImageView.image = #imageLiteral(resourceName: "LTK58oGTa")
             } else if behavior.isProsocial {
                 cell.backgroundColor = self.prosocialBlue
+                cell.behaviorImageView.image = #imageLiteral(resourceName: "ma")
             }
-            cell.textLabel?.textColor = .white
-            cell.textLabel?.text = "\(behavior.detail!) \(dateFormatter.string(from: date))"
+            cell.behaviorDescriptionLabel.textColor = .white
+            cell.behaviorDescriptionLabel.text = behavior.detail!
+            
+            cell.timestampLabel.textColor = .white
+            cell.timestampLabel.text = dateFormatter.string(from: date)
+            
+            //cell.textLabel?.text = "\(behavior.detail!) \(dateFormatter.string(from: date))"
             return cell
         case childName where childName == self.childrensNames[1]:
             if behavior.isAntisocial {
                 cell.backgroundColor = .red
+                cell.behaviorImageView.image = #imageLiteral(resourceName: "LTK58oGTa")
             } else if behavior.isProsocial {
                 cell.backgroundColor = self.prosocialBlue
+                cell.behaviorImageView.image = #imageLiteral(resourceName: "ma")
+
             }
-            cell.textLabel?.textColor = .white
-            cell.textLabel?.text = "\(behavior.detail!) \(dateFormatter.string(from: date))"
+            cell.behaviorDescriptionLabel.textColor = .white
+            cell.behaviorDescriptionLabel.text = behavior.detail!
+            
+            cell.timestampLabel.textColor = .white
+            cell.timestampLabel.text = dateFormatter.string(from: date)
+
             return cell
         default:
+        
             return cell
         }
        
@@ -581,50 +696,28 @@ class BehaviorTableViewController: UITableViewController, UIPickerViewDataSource
         
     }
     
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
+        
+        guard let behaviorToRemove = currentChild?.behaviors?[indexPath.row] as? Behavior,
+            editingStyle == .delete else { return }
+        
+        managedContext.delete(behaviorToRemove)
+        
+        do {
+            try managedContext.save()
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        catch let error as NSError {
+            print("Saving Error: \(error). Description: \(error.userInfo)")
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

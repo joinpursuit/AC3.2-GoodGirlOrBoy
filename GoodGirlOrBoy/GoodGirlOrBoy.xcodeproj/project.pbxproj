@@ -23,6 +23,7 @@
 		3A1F475C1E187B3D00732F14 /* ProsocialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F475B1E187B3D00732F14 /* ProsocialPicker.swift */; };
 		3A1F475E1E19AA1600732F14 /* AntisocialPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F475D1E19AA1600732F14 /* AntisocialPicker.swift */; };
 		3A1F47601E19CD0E00732F14 /* AntisocialBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F475F1E19CD0E00732F14 /* AntisocialBehavior.swift */; };
+		3A1F47621E1AFCA300732F14 /* BehaviorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F47611E1AFCA300732F14 /* BehaviorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,15 +36,16 @@
 		3A1F47461E1849B100732F14 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		3A1F47481E18511B00732F14 /* BehaviorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorTableViewController.swift; sourceTree = "<group>"; };
 		3A1F474B1E1852D800732F14 /* Child Behavior.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Child Behavior.xcdatamodel"; sourceTree = "<group>"; };
-		3A1F474D1E18541100732F14 /* Behavior+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Behavior+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A1F474E1E18541100732F14 /* Behavior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Behavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3A1F474F1E18541100732F14 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A1F47501E18541100732F14 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A1F474D1E18541100732F14 /* Behavior+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Behavior+CoreDataClass.swift"; path = "../Behavior+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A1F474E1E18541100732F14 /* Behavior+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Behavior+CoreDataProperties.swift"; path = "../Behavior+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3A1F474F1E18541100732F14 /* Child+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Child+CoreDataClass.swift"; path = "../Child+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3A1F47501E18541100732F14 /* Child+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Child+CoreDataProperties.swift"; path = "../Child+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3A1F47551E1859AB00732F14 /* ProsocialBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProsocialBehavior.swift; sourceTree = "<group>"; };
 		3A1F47591E18678200732F14 /* ChooseBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseBehaviorViewController.swift; sourceTree = "<group>"; };
-		3A1F475B1E187B3D00732F14 /* ProsocialPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProsocialPicker.swift; sourceTree = "<group>"; };
+		3A1F475B1E187B3D00732F14 /* ProsocialPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProsocialPicker.swift; path = ../ProsocialPicker.swift; sourceTree = "<group>"; };
 		3A1F475D1E19AA1600732F14 /* AntisocialPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntisocialPicker.swift; sourceTree = "<group>"; };
 		3A1F475F1E19CD0E00732F14 /* AntisocialBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntisocialBehavior.swift; sourceTree = "<group>"; };
+		3A1F47611E1AFCA300732F14 /* BehaviorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,8 @@
 		3A1F47281E18498F00732F14 = {
 			isa = PBXGroup;
 			children = (
-				3A1F475B1E187B3D00732F14 /* ProsocialPicker.swift */,
-				3A1F474D1E18541100732F14 /* Behavior+CoreDataClass.swift */,
-				3A1F474E1E18541100732F14 /* Behavior+CoreDataProperties.swift */,
-				3A1F474F1E18541100732F14 /* Child+CoreDataClass.swift */,
-				3A1F47501E18541100732F14 /* Child+CoreDataProperties.swift */,
 				3A1F47331E18498F00732F14 /* GoodGirlOrBoy */,
+				3A1F47671E1B2B4A00732F14 /* Supporting Files */,
 				3A1F47321E18498F00732F14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,20 +79,74 @@
 		3A1F47331E18498F00732F14 /* GoodGirlOrBoy */ = {
 			isa = PBXGroup;
 			children = (
-				3A1F47341E18498F00732F14 /* AppDelegate.swift */,
-				3A1F474A1E1852D800732F14 /* Child Behavior.xcdatamodeld */,
-				3A1F47461E1849B100732F14 /* CoreDataStack.swift */,
-				3A1F47381E18498F00732F14 /* Main.storyboard */,
-				3A1F47551E1859AB00732F14 /* ProsocialBehavior.swift */,
-				3A1F475F1E19CD0E00732F14 /* AntisocialBehavior.swift */,
-				3A1F47481E18511B00732F14 /* BehaviorTableViewController.swift */,
-				3A1F475D1E19AA1600732F14 /* AntisocialPicker.swift */,
-				3A1F47591E18678200732F14 /* ChooseBehaviorViewController.swift */,
-				3A1F473B1E18498F00732F14 /* Assets.xcassets */,
-				3A1F473D1E18498F00732F14 /* LaunchScreen.storyboard */,
-				3A1F47401E18498F00732F14 /* Info.plist */,
+				3A1F47631E1B2AE100732F14 /* NSManagedObject */,
+				3A1F47661E1B2B2F00732F14 /* Core Data */,
+				3A1F47641E1B2AF700732F14 /* Views */,
+				3A1F47651E1B2B1600732F14 /* Models */,
+				3A1F47681E1B2B6F00732F14 /* Controllers */,
 			);
 			path = GoodGirlOrBoy;
+			sourceTree = "<group>";
+		};
+		3A1F47631E1B2AE100732F14 /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F474D1E18541100732F14 /* Behavior+CoreDataClass.swift */,
+				3A1F474E1E18541100732F14 /* Behavior+CoreDataProperties.swift */,
+				3A1F474F1E18541100732F14 /* Child+CoreDataClass.swift */,
+				3A1F47501E18541100732F14 /* Child+CoreDataProperties.swift */,
+			);
+			name = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		3A1F47641E1B2AF700732F14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F47381E18498F00732F14 /* Main.storyboard */,
+				3A1F473D1E18498F00732F14 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3A1F47651E1B2B1600732F14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F47551E1859AB00732F14 /* ProsocialBehavior.swift */,
+				3A1F475F1E19CD0E00732F14 /* AntisocialBehavior.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3A1F47661E1B2B2F00732F14 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F474A1E1852D800732F14 /* Child Behavior.xcdatamodeld */,
+				3A1F47461E1849B100732F14 /* CoreDataStack.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		3A1F47671E1B2B4A00732F14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F47341E18498F00732F14 /* AppDelegate.swift */,
+				3A1F473B1E18498F00732F14 /* Assets.xcassets */,
+				3A1F47401E18498F00732F14 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = GoodGirlOrBoy;
+			sourceTree = "<group>";
+		};
+		3A1F47681E1B2B6F00732F14 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F47611E1AFCA300732F14 /* BehaviorTableViewCell.swift */,
+				3A1F47481E18511B00732F14 /* BehaviorTableViewController.swift */,
+				3A1F47591E18678200732F14 /* ChooseBehaviorViewController.swift */,
+				3A1F475D1E19AA1600732F14 /* AntisocialPicker.swift */,
+				3A1F475B1E187B3D00732F14 /* ProsocialPicker.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +228,7 @@
 				3A1F47471E1849B100732F14 /* CoreDataStack.swift in Sources */,
 				3A1F47521E18541100732F14 /* Behavior+CoreDataProperties.swift in Sources */,
 				3A1F475E1E19AA1600732F14 /* AntisocialPicker.swift in Sources */,
+				3A1F47621E1AFCA300732F14 /* BehaviorTableViewCell.swift in Sources */,
 				3A1F47491E18511B00732F14 /* BehaviorTableViewController.swift in Sources */,
 				3A1F47351E18498F00732F14 /* AppDelegate.swift in Sources */,
 				3A1F475A1E18678200732F14 /* ChooseBehaviorViewController.swift in Sources */,
