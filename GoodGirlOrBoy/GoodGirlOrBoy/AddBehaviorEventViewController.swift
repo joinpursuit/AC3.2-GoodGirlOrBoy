@@ -17,16 +17,18 @@ class AddBehaviorEventViewController: UIViewController, UIPickerViewDelegate, UI
     var proSocial = true
     var pickerData = [[String]]()
     var childrenNames = ["Harry", "Hermione", "Ron"]
-    var behaviors = ["load dishes", "do hw", "watch tv", "do laundry"]
+    var goodBehaviors = ["shaing", "clearing the table", "finishing dinner", "saying thank you", "apologizing", "doing homework"]
+    var badBehaviors = ["throwing", "running in the house", "hitting", "biting"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if proSocial {
             selectBehaviorLabel.text = "Please select the pro-social behavior"
+            pickerData = [childrenNames, goodBehaviors]
         } else {
             selectBehaviorLabel.text = "Please select the anti-social behavior"
+            pickerData = [childrenNames, badBehaviors]
         }
-        pickerData = [childrenNames, behaviors]
     }
     
     // MARK: - PickerView
@@ -56,7 +58,11 @@ class AddBehaviorEventViewController: UIViewController, UIPickerViewDelegate, UI
         behaviorEvent.timeStamp = NSDate()
         behaviorEvent.proSocial = proSocial
         behaviorEvent.childName = childrenNames[behaviorPickerView.selectedRow(inComponent: 0)]
-        behaviorEvent.observedBehavior = behaviors[behaviorPickerView.selectedRow(inComponent: 1)]
+        if proSocial {
+            behaviorEvent.observedBehavior = goodBehaviors[behaviorPickerView.selectedRow(inComponent: 1)]
+        } else {
+            behaviorEvent.observedBehavior = badBehaviors[behaviorPickerView.selectedRow(inComponent: 1)]
+        }
         if context.hasChanges {
             try! context.save()
         }
