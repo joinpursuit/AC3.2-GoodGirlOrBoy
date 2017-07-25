@@ -194,7 +194,6 @@ class GoodBoyTableViewController: UIViewController, UITableViewDelegate, UITable
             } catch let error {
                 fatalError("Failed to save context: \(error)")
             }
-            
         }
     }
 
